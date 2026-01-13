@@ -14,6 +14,13 @@ section {
     font-family: 'Amiri', serif;
 }
 
+footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
 /* NAV UNDERLINE */
 .nav-link {
     position: relative;
@@ -35,37 +42,13 @@ section {
 
 /* SERVICE ICONS */
 .service-icon {
-    width: 65px;
-    height: 65px;
+    width: 50px;
+    height: 50px;
     margin-bottom: 15px;
     transition: filter 0.3s ease; /* Animacija promene boje */
 }
 
-/* CONTACT ICONS */
-.contact-icon {
-    width: 28px;
-    margin-right: 8px;
-}
-
-footer {
-    background: #1a1a1a;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-
-
-/* HERO SECTION 
-.hero {
-    height: 600px;
-    background: url("images/hero.webp") center/cover no-repeat;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}*/
+/* HERO SECTION */
 .hero::after {
     content: "";
     position: absolute;
@@ -75,12 +58,13 @@ footer {
 .hero-content {
     position: relative;
     z-index: 2;
+    padding: 20px;
+    text-align: center;
 }
 
-/* HERO animation */
 .hero {
     position: relative;
-    height: 600px;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,56 +72,28 @@ footer {
     padding: 0;
 }
 
-/* Animirana pozadina */
+/* Animated background */
 .animated-bg {
     position: absolute;
     inset: 0;
-    background: url("images/pozadina1.jpg") center/cover no-repeat;
+    background: url("images/pozadina.jpg") center/cover no-repeat;
     filter: brightness(40%);
     animation: slowZoom 10s ease-in-out infinite alternate;
 }
-
-/* Zlatna animirana mreža preko pozadine 
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: 
-        radial-gradient(circle at top left, rgba(255,190,80,0.15), transparent 60%),
-        radial-gradient(circle at bottom right, rgba(255,190,80,0.10), transparent 70%),
-        url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-    mix-blend-mode: overlay;
-    animation: glowPulse 8s ease-in-out infinite alternate;
-}*/
 
 @keyframes slowZoom {
     0% { transform: scale(1); }
     100% { transform: scale(1.2); }
 }
 
-@keyframes glowPulse {
-    0% { opacity: 0.4; }
-    100% { opacity: 0.7; }
-}
-
-/* Hero tekst */
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-.btn .contact {
-    background-color: #ff9900;
-}
-
+/* CARD SECTION */
 .card {
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* Centriranje horizontalno */
-    align-items: center;      /* Centriranje vertikalno */
-    height: 100%;             /* Da bi se zauzela cela visina */
-
-        opacity: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    opacity: 0;
     transform: scale(0.3);
     transition:
         transform 0.6s ease-out,
@@ -145,13 +101,16 @@ footer {
     border-radius: 14px;
 }
 
-.service-icon {
-    width: 50px;  /* Postavi veličinu ikone po želji */
-    height: 50px; /* Postavi veličinu ikone po želji */
-    margin-bottom: 15px; /* Razmak između ikone i teksta */
+.card.show {
+    opacity: 1;
+    transform: scale(1);
 }
 
-/* Stil za sliku */
+.card:hover {
+    animation: pulse 1.2s infinite;
+}
+
+/* Image zoom */
 .zoom-image {
     transition: transform 0.3s ease; /* Animacija za transformaciju sa trajanjem od 0.3 sekunde */
 }
@@ -162,23 +121,18 @@ footer {
 }
 
 
-/* Osnovni stilovi za kontakt sekciju */
+/* CONTACT SECTION */
+.contact-icon {
+    width: 28px;
+    margin-right: 8px;
+}
+
 .contact-section {
     padding: 60px 0;
     background-color: #f8f9fa;
 }
 
-.contact-section h2, .contact-section h3 {
-    color: #212529;
-    font-weight: bold;
-}
-
-.contact-section p {
-    font-size: 16px;
-    color: #6c757d;
-}
-
-/* Stil za formu */
+/* CONTACT FORM SECTION */
 .contact-form .form-group {
     margin-bottom: 15px;
 }
@@ -205,7 +159,26 @@ footer {
     background-color: #6c5b3d;
 }
 
-/* Stil za kontakt informacije */
+.btn .contact {
+    background-color: #ff9900;
+}
+
+.contact-bg {
+    position: absolute;
+    inset: 0;
+    background: url("images/background.jfif") center/cover no-repeat;
+    filter: brightness(40%);
+    animation: slowZoom 12s ease-in-out infinite alternate;
+}
+
+/* TAMNI OVERLAY */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+}
+
+/* CONTACT INFO */
 .contact-info {
     list-style: none;
     padding: 0;
@@ -221,7 +194,7 @@ footer {
     color: #827153;
 }
 
-/* Stil za mapu */
+/* MAP SECTION */
 .map-container {
     width: 100%;
     height: 250px;
@@ -229,63 +202,24 @@ footer {
     margin-top: 20px;
 }
 
-@media (max-width: 768px) {
-    .contact-section {
-        padding: 40px 15px;
-    }
-
-    .contact-form, .contact-info {
-        margin-top: 20px;
-    }
-}
-
-
-.contact-bg {
-   /* position: relative;
-    min-height: 420px;
-    background: url("images/handshake.jpg") center/cover no-repeat;
-    animation: slowZoom 20s ease-in-out infinite alternate;
-    display: flex;
-    align-items: center;
-    justify-content: center;*/
-
-        position: absolute;
-    inset: 0;
-    background: url("images/pp.jfif") center/cover no-repeat;
-    filter: brightness(40%);
-    animation: slowZoom 12s ease-in-out infinite alternate;
-}
-
-/* TAMNI OVERLAY */
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
-}
-
-/* POZADINSKA ANIMACIJA 
-@keyframes bgZoom {
-    from {
-        transform: scale(0.9);
-    }
-    to {
-        transform: scale(1);
-    }
-}*/
-
-/* KARTICE WRAPPER */
+/* CONTACT WRAPPER */
 .contact-cards {
     position: relative;
     display: flex;
-    gap: 30px;
+    justify-content: center;
+    align-items: center; 
+    gap: 20px;
     z-index: 2;
+    flex-wrap: wrap;
+    padding: 0 15px;
 }
 
-/* POJEDINAČNA KARTICA */
+/* SINGLE CARD */
 .contact-card {
     background: #f8f9fa;
     padding: 20px 15px;
-    width: 300px;
+    width: 100%;
+    max-width: 320px;
     text-align: center;
     border-radius: 14px;
     box-shadow: 0 15px 25px rgba(0,0,0,0.35);
@@ -301,24 +235,6 @@ footer {
     will-change: transform;
 }
 
-/* IKONE */
-.contact-card i {
-    font-size: 36px;
-    color: #827153;
-    margin-bottom: 15px;
-}
-
-/* TEKST */
-.contact-card h5 {
-    color: #212529;
-    margin-bottom: 10px;
-}
-
-.contact-card p {
-    color: #555;
-    margin: 0;
-}
-
 /* ===== ANIMACIJA IZ CENTRA ===== */
 .animate {
     opacity: 0;
@@ -329,13 +245,6 @@ footer {
 .animate.show {
     opacity: 1;
     transform: scale(1);
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .contact-cards {
-        flex-direction: column;
-    }
 }
 
 /* Hover efekat */
@@ -356,10 +265,27 @@ footer {
     color: #000;
 }
 
-/* Kada se aktiviraju */
-.card.show {
-    opacity: 1;
-    transform: scale(1);
+/* IKONE */
+.contact-card i {
+    font-size: 36px;
+    color: #827153;
+    margin-bottom: 15px;
+}
+
+/* TEKST */
+.contact-card h5 {
+    color: #212529;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    color: #555;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 @keyframes pulse {
@@ -377,6 +303,96 @@ footer {
     }
 }
 
-.card:hover {
-    animation: pulse 1.2s infinite;
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 40px 15px;
+    }
+
+    .contact-form, .contact-info {
+        margin-top: 20px;
+    }
+
+    #kontakt .row {
+        flex-direction: column;
+    }
+
+    .map-container {
+        height: 200px;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .hero {
+        padding-bottom: 3%;
+    }
+}
+
+@media (max-width: 900px) {
+    .contact-cards {
+        flex-direction: column;
+    }
+}
+
+.flip-card {
+    width: 300px;
+    height: 300px;
+    perspective: 1200px;
+    position: relative;
+}
+
+.flip-card-inner {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+    transform-origin: center center;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-front img,
+.flip-card-back img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+
+@media (max-width: 576px) {
+    .flip-card {
+        width: 220px;
+        height: 220px;
+    }
+
+    .navbar-brand .title {
+        font-size: 12px;
+        line-height: 1.2;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 12px;
+    }
+}
+
+.flip-card-inner {
+    will-change: transform;
 }

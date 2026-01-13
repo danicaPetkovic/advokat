@@ -15,11 +15,10 @@ document.getElementById("emailForm").addEventListener("submit", function(e) {
   const to = "adv.miodrag_petkovic@outlook.com";
   const subject = encodeURIComponent(document.getElementById("email-subject").value);
   const name = encodeURIComponent(document.getElementById("email-name").value);
-  const surname = encodeURIComponent(document.getElementById("email-surname").value);
   const phone = encodeURIComponent(document.getElementById("email-phone").value);
   const text = encodeURIComponent(document.getElementById("email-body").value);
 
-  const body = `Ime i prezime: ${name} ${surname}%0ABroj telefona: ${phone}%0AOpis slucaja: ${text}`
+  const body = `Ime i prezime: ${name}%0ABroj telefona: ${phone}%0AOpis slucaja: ${text}`
 
   // Kreira mailto link
   const mailtoLink = `mailto:${to}?subject=${subject}&body=${body}`;
