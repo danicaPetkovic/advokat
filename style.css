@@ -288,53 +288,6 @@ img {
     height: auto;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 rgba(212, 175, 55, 0.4);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 rgba(212, 175, 55, 0.4);
-    }
-}
-
-@media (max-width: 768px) {
-    .contact-section {
-        padding: 40px 15px;
-    }
-
-    .contact-form, .contact-info {
-        margin-top: 20px;
-    }
-
-    #kontakt .row {
-        flex-direction: column;
-    }
-
-    .map-container {
-        height: 200px;
-    }
-
-    .nav-link::after {
-        display: none;
-    }
-
-    .hero {
-        padding-bottom: 3%;
-    }
-}
-
-@media (max-width: 900px) {
-    .contact-cards {
-        flex-direction: column;
-    }
-}
-
 .flip-card {
     width: 300px;
     height: 300px;
@@ -376,6 +329,64 @@ img {
     transform: rotateY(180deg);
 }
 
+.flip-card-inner {
+    will-change: transform;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(212, 175, 55, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(212, 175, 55, 0.4);
+    }
+}
+
+@media (max-width: 900px) {
+    .contact-cards {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 40px 15px;
+    }
+
+    .contact-form, .contact-info {
+        margin-top: 20px;
+    }
+
+    #kontakt .row {
+        flex-direction: column;
+    }
+
+    .map-container {
+        height: 200px;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .hero {
+        padding-bottom: 3%;
+    }
+
+    .navbar-toggler {
+        padding: 4px 6px;
+    }
+    .navbar-toggler-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
 
 @media (max-width: 576px) {
     .flip-card {
@@ -391,8 +402,4 @@ img {
     .navbar-nav .nav-link {
         font-size: 12px;
     }
-}
-
-.flip-card-inner {
-    will-change: transform;
 }
