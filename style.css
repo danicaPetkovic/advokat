@@ -274,7 +274,7 @@ footer {
 
 /* TEKST */
 .contact-card h5 {
-    color: #212529;
+    color: #152333;
     margin-bottom: 10px;
 }
 
@@ -390,8 +390,8 @@ img {
 
 @media (max-width: 576px) {
     .flip-card {
-        width: 220px;
-        height: 220px;
+        width: auto;
+        height: 350px;
     }
 
     .navbar-brand .title {
