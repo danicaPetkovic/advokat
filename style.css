@@ -391,7 +391,7 @@ img {
 @media (max-width: 576px) {
     .flip-card {
         width: auto;
-        height: 350px;
+        height: 450px;
     }
 
     .navbar-brand .title {
