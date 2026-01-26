@@ -402,4 +402,8 @@ img {
     .navbar-nav .nav-link {
         font-size: 12px;
     }
+
+    .hero {
+        padding-bottom: 3%;
+    }
 }
