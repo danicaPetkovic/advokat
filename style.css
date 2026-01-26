@@ -386,6 +386,10 @@ img {
         width: 18px;
         height: 18px;
     }
+
+    .anchor-offset {
+        margin-top: 12%;
+    }
 }
 
 @media (max-width: 576px) {
@@ -403,7 +407,7 @@ img {
         font-size: 12px;
     }
 
-    .hero {
-        padding-bottom: 3%;
+    .anchor-offset {
+        margin-top: 12%;
     }
 }
