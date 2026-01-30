@@ -333,6 +333,10 @@ img {
     will-change: transform;
 }
 
+a.no-underline {
+    text-decoration: none;
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);
