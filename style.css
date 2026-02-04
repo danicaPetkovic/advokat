@@ -337,6 +337,186 @@ a.no-underline {
     text-decoration: none;
 }
 
+/* FAQ accordion – boje usklađene sa sajtom */
+
+.accordion-button {
+    background-color: #152333;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 1.2rem;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #AB946D;
+    color: #212529;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: #AB946D;
+}
+
+.accordion-item {
+    border: 1px solid #152333;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+
+.accordion-body {
+    background-color: #f8f6f2;
+    color: #212529;
+}
+
+/* Strelica */
+.accordion-button::after {
+    filter: brightness(0) invert(1);
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: none;
+}
+
+/* Dugmad (CTA) */
+.btn-danger {
+    background-color: #152333;
+    border-color: #152333;
+}
+
+.btn-danger:hover {
+    background-color: #AB946D;
+    border-color: #AB946D;
+    color: #212529;
+}
+
+/* Stavke */
+.navbar .dropdown-item {
+    color: #f1f1f1;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+/* Hover efekat */
+.navbar .dropdown-item:hover {
+    background: linear-gradient(
+        90deg,
+        rgba(130, 113, 83, 0.9),
+        rgba(130, 113, 83, 0.6)
+    );
+    color: #212529;
+}
+
+/* Dropdown strelica */
+.navbar .dropdown-toggle::after {
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+/* Split dropdown dugme – advokatski stil */
+
+.navbar .dropdown-toggle-split {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.navbar .dropdown-toggle-split::after {
+    margin-left: 0;
+    vertical-align: middle;
+}
+
+/* Hover efekat samo za strelicu */
+.navbar .dropdown-toggle-split:hover {
+    color: #827153;
+}
+
+/* =========================
+   NAVBAR – osnovni stil
+   ========================= */
+
+.main-navbar {
+    background-color: #152333;
+    padding: 0.8rem 0;
+}
+
+.main-navbar .navbar-brand {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.main-navbar .nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.25s ease;
+}
+
+.main-navbar .nav-link:hover {
+    color: #827153;
+}
+
+/* =========================
+   DROPDOWN – USLUGE
+   ========================= */
+
+.navbar .dropdown {
+    position: relative;
+}
+
+/* Dugme (strelica) */
+.navbar .dropdown-toggle-split {
+    background: none;
+    border: none;
+    padding: 0 6px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.navbar .dropdown-toggle-split:hover {
+    color: #827153;
+}
+
+/* Dropdown meni
+.navbar .dropdown-menu {
+    background-color: #152333;
+    border: 1px solid rgba(130, 113, 83, 0.4);
+    border-radius: 10px;
+    padding: 0.5rem 0;
+    margin-top: 0;
+    top: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: all 0.25s ease;
+    display: block;
+    visibility: hidden;
+} */
+
+.navbar .dropdown:hover .dropdown-menu,
+.navbar .dropdown.show .dropdown-menu {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* Stavke */
+.navbar .dropdown-item {
+    color: #f1f1f1;
+    padding: 0.65rem 1.4rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.navbar .dropdown-item:hover {
+    background: linear-gradient(
+        90deg,
+        rgba(130, 113, 83, 0.9),
+        rgba(130, 113, 83, 0.6)
+    );
+    color: #212529;
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -392,7 +572,7 @@ a.no-underline {
     }
 
     .anchor-offset {
-        margin-top: 12%;
+        padding-top: 12%;
     }
 }
 
@@ -412,6 +592,75 @@ a.no-underline {
     }
 
     .anchor-offset {
-        margin-top: 12%;
+       padding-top: 12%;
+    }
+}
+
+
+@media (max-width: 991px) {
+    .navbar .dropdown-menu {
+        border-radius: 0;
+        box-shadow: none;
+        margin-top: 0;
+    }
+    
+    .navbar .dropdown-menu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        display: none;
+        border-radius: 6px;
+        box-shadow: none;
+        margin-top: 0;
+    }
+
+    .navbar .dropdown.show .dropdown-menu {
+        display: block;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 8px;
+    }
+
+    .navbar .dropdown-toggle::after {
+        transition: transform 0.2s ease;
+    }
+
+    .navbar .dropdown:hover .dropdown-toggle::after {
+        transform: rotate(180deg);
+    }
+
+    .navbar .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+     .navbar .dropdown {
+        position: relative;
+    }
+
+    .navbar .dropdown-menu {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 0;
+        background-color: #152333;
+        border: 1px solid rgba(130,113,83,0.4);
+        border-radius: 10px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(8px);
+        transition: all 0.25s ease;
+    }
+
+    .navbar .dropdown:hover .dropdown-menu,
+    .navbar .dropdown.show .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
 }
