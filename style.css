@@ -390,24 +390,6 @@ a.no-underline {
     color: #212529;
 }
 
-/* Stavke */
-.navbar .dropdown-item {
-    color: #f1f1f1;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: all 0.25s ease;
-}
-
-/* Hover efekat */
-.navbar .dropdown-item:hover {
-    background: linear-gradient(
-        90deg,
-        rgba(130, 113, 83, 0.9),
-        rgba(130, 113, 83, 0.6)
-    );
-    color: #212529;
-}
-
 /* Dropdown strelica */
 .navbar .dropdown-toggle::after {
     margin-left: 6px;
@@ -417,6 +399,9 @@ a.no-underline {
 /* Split dropdown dugme – advokatski stil */
 
 .navbar .dropdown-toggle-split {
+    background: none;
+    border: none;
+    padding: 0 6px;
     color: #ffffff;
     cursor: pointer;
 }
@@ -463,35 +448,6 @@ a.no-underline {
     position: relative;
 }
 
-/* Dugme (strelica) */
-.navbar .dropdown-toggle-split {
-    background: none;
-    border: none;
-    padding: 0 6px;
-    color: #ffffff;
-    cursor: pointer;
-}
-
-.navbar .dropdown-toggle-split:hover {
-    color: #827153;
-}
-
-/* Dropdown meni
-.navbar .dropdown-menu {
-    background-color: #152333;
-    border: 1px solid rgba(130, 113, 83, 0.4);
-    border-radius: 10px;
-    padding: 0.5rem 0;
-    margin-top: 0;
-    top: 100%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-    opacity: 0;
-    transform: translateY(8px);
-    transition: all 0.25s ease;
-    display: block;
-    visibility: hidden;
-} */
-
 .navbar .dropdown:hover .dropdown-menu,
 .navbar .dropdown.show .dropdown-menu {
     opacity: 1;
@@ -503,7 +459,6 @@ a.no-underline {
 .navbar .dropdown-item {
     color: #f1f1f1;
     padding: 0.65rem 1.4rem;
-    font-size: 0.95rem;
     font-weight: 500;
     transition: all 0.25s ease;
 }

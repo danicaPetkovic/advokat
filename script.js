@@ -49,3 +49,94 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cards.forEach(card => observer.observe(card));
 });
+
+ /*document.addEventListener("DOMContentLoaded", function () {
+
+    if (window.matchMedia("(max-width: 991px)").matches) {
+
+        const toggleBtn = document.getElementById("toggle-btn");
+
+        toggleBtn.addEventListener("click", function (e) {
+            e.stopPropagation();
+
+            const menu = document.querySelector(".dropdown-menu");
+
+            if (menu.style.display === "contents") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "contents";
+            }
+        });
+    }
+});*/
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const dropdown = document.querySelector(".nav-item.dropdown");
+
+    function isMobile() {
+        return window.matchMedia("(max-width: 991px)").matches;
+    }
+
+    const btn = dropdown.querySelector(".dropdown-toggle");
+    const menu = dropdown.querySelector(".dropdown-menu");
+    const menuItems = dropdown.querySelectorAll(".dropdown-item");
+
+    // KLIK (mobilni + desktop dugme)
+    btn.addEventListener("click", function(e){
+        e.preventDefault();
+        e.stopPropagation();
+
+        if(!isMobile()){
+            menu.classList.toggle("show");
+        } else {
+            if (menu.style.display === "contents") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "contents";
+                
+                menuItems.forEach((entry, index) => {
+                    entry.style.fontSize = "12px";
+                });
+            }
+        }
+
+        // HOVER samo za desktop
+        dropdown.addEventListener("mouseenter", function(){
+            if(!isMobile()){
+                menu.classList.add("show");
+            } else {
+                if (menu.style.display === "contents") {
+                    menu.style.display = "none";
+                } else {
+                    menu.style.display = "contents";
+                    menuItems.forEach((entry, index) => {
+                        entry.style.fontSize = "12px";
+                    });                
+                }
+            }
+        });
+
+        dropdown.addEventListener("mouseleave", function(){
+            if(!isMobile()){
+                menu.classList.remove("show");
+            } else {
+                if (menu.style.display === "contents") {
+                    menu.style.display = "none";
+                } else {
+                    menu.style.display = "contents";
+                    menuItems.forEach((entry, index) => {
+                        entry.style.fontSize = "12px";
+                    });
+                }
+            }
+        });
+
+    });
+
+    // klik van menija zatvara
+    document.addEventListener("click", function(){
+        document.querySelectorAll(".dropdown-menu.show")
+            .forEach(menu => menu.classList.remove("show"));
+    });
+});
