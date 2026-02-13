@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
     });
 });
 
-document.getElementById("emailForm").addEventListener("submit", function(e) {
+document.getElementById("emailForm")?.addEventListener("submit", function(e) {
   e.preventDefault(); // sprečava reload stranice
 
   // Pokupi podatke iz forme
@@ -49,26 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cards.forEach(card => observer.observe(card));
 });
-
- /*document.addEventListener("DOMContentLoaded", function () {
-
-    if (window.matchMedia("(max-width: 991px)").matches) {
-
-        const toggleBtn = document.getElementById("toggle-btn");
-
-        toggleBtn.addEventListener("click", function (e) {
-            e.stopPropagation();
-
-            const menu = document.querySelector(".dropdown-menu");
-
-            if (menu.style.display === "contents") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "contents";
-            }
-        });
-    }
-});*/
 
 document.addEventListener("DOMContentLoaded", function () {
 
