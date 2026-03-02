@@ -15,10 +15,27 @@ section {
 }
 
 footer {
-    background: #1a1a1a;
-    color: white;
-    padding: 20px 0;
+    background: #141414;
+    padding: 30px 0;
     text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+/* ===== CTA ===== */
+
+.final-cta {
+    background: #111;
+    text-align: center;
+}
+
+.final-cta h3 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+.gold {
+    color: #d4af37;
 }
 
 /* NAV UNDERLINE */
@@ -262,7 +279,7 @@ footer {
 }
 
 .contact-card:hover a {
-    color: #000;
+    color: #141414;
 }
 
 /* IKONE */
@@ -274,7 +291,7 @@ footer {
 
 /* TEKST */
 .contact-card h5 {
-    color: #152333;
+    color: #141414;
     margin-bottom: 10px;
 }
 
@@ -340,7 +357,7 @@ a.no-underline {
 /* FAQ accordion – boje usklađene sa sajtom */
 
 .accordion-button {
-    background-color: #152333;
+    background-color: #141414;
     color: #ffffff;
     font-weight: 600;
     padding: 1.2rem;
@@ -357,7 +374,7 @@ a.no-underline {
 }
 
 .accordion-item {
-    border: 1px solid #152333;
+    border: 1px solid #141414;
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 12px;
@@ -380,8 +397,8 @@ a.no-underline {
 
 /* Dugmad (CTA) */
 .btn-danger {
-    background-color: #152333;
-    border-color: #152333;
+    background-color: #141414;
+    border-color: #141414;
 }
 
 .btn-danger:hover {
@@ -421,7 +438,7 @@ a.no-underline {
    ========================= */
 
 .main-navbar {
-    background-color: #152333;
+    background-color: #141414;
     padding: 0.8rem 0;
 }
 
@@ -429,6 +446,7 @@ a.no-underline {
     font-weight: 600;
     letter-spacing: 0.5px;
 }
+
 
 .main-navbar .nav-link {
     color: #ffffff;
@@ -603,7 +621,7 @@ a.no-underline {
         top: 100%;
         left: 0;
         margin-top: 0;
-        background-color: #152333;
+        background-color: #141414;
         border: 1px solid rgba(130,113,83,0.4);
         border-radius: 10px;
         opacity: 0;
@@ -618,4 +636,41 @@ a.no-underline {
         visibility: visible;
         transform: translateY(0);
     }
+
+    .cta-btn {
+    margin-top: 40px;
+    display: inline-block;
+    padding: 16px 40px;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: 0.4s;
+}
+
+.cta-btn:hover {
+    background: #d4af37;
+    color: black;
+}  
+
+/* ===== CTA ===== */
+
+.final-cta {
+    background: #111;
+    text-align: center;
+}
+
+.final-cta h3 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+        .section-padding {
+            padding: 140px 0;
+        }
+
+        @media(max-width: 768px){
+            .hero h1 { font-size: 40px; }
+            .section-padding { padding: 80px 0; }
+        }
 }
