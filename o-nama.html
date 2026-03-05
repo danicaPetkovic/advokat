@@ -142,17 +142,17 @@ body::after {
 </head>
 <body>
 
-<!-- ================= NAVBAR ================= -->
-
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="index.html">
             <img src="favicon.png" width="40" alt="Advokat Niš">
-            <span class="title ps-2">Advokat Miodrag Petković Niš</span>
+            <span class="title" style="padding-left: 2%;" alt="Advokat Miodrag Petković Niš">Advokat Miodrag Petković Niš</span>
         </a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#mainNavbar">
+                data-bs-target="#mainNavbar" aria-controls="mainNavbar"
+                aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -161,12 +161,16 @@ body::after {
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Početna</a>
                 </li>
-
+                <li class="nav-item"><a class="nav-link" href="o-nama.html">O nama</a></li>
+                <!-- USLUGE -->
                 <li class="nav-item dropdown">
                     <div class="d-flex align-items-center">
                         <a class="nav-link pe-1" href="index.html#usluge">Usluge</a>
+                        <!-- Dugme za dropdown -->
                         <button class="btn dropdown-toggle dropdown-toggle-split"
-                                data-bs-toggle="dropdown">
+                                id="toggle-btn"
+                                aria-expanded="true" id="dropdown-toggle">
+                            <span class="visually-hidden">Toggle Dropdown</span>
                         </button>
                     </div>
                     <ul class="dropdown-menu">
@@ -178,9 +182,10 @@ body::after {
                         <li><a class="dropdown-item" href="usluge/radno-pravo-nis.html">Radno pravo</a></li>
                     </ul>
                 </li>
-
                 <li class="nav-item"><a class="nav-link" href="faq.html">Najčešća pitanja</a></li>
-                <li class="nav-item"><a class="nav-link active" href="kontakt.html">Kontakt</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="kontakt.html">Kontakt</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -198,16 +203,23 @@ body::after {
 <div class="about-section">
         <div class="row align-items-center">
             <div class="col-md-5" style="justify-content: center; align-items: center;">
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <img src="images/IMG_8926.jpeg" style="border: 1px solid #d4af37;" alt="Advokat Miodrag Petković Niš" class="img-fluid rounded-circle shadow">
-                        </div>
-                        <div class="flip-card-back">
-                            <img src="images/logo-veci.png" style="background-color: #141414; border: 1px solid #d4af37;" class="img-fluid rounded-circle shadow" alt="Advokatska kancelarija Niš">
-                        </div>
-                    </div>
-                </div>
+<div class="flip-card">
+    <div class="flip-card-inner">
+        <div class="flip-card-front">
+            <img src="images/IMG_8926.jpeg"
+            style="border:1px solid #d4af37;"
+            alt="Advokat Miodrag Petković Niš"
+            class="img-fluid rounded-circle shadow">
+        </div>
+
+        <div class="flip-card-back">
+            <img src="images/logo-veci.png"
+            style="background-color:#141414; border:1px solid #d4af37;"
+            class="img-fluid rounded-circle shadow"
+            alt="Advokatska kancelarija Niš">
+        </div>
+    </div>
+</div>
             </div>
             <div class="col-md-7">
                 <p style="text-align: justify;">
@@ -270,6 +282,17 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => {
     observer.observe(section);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".flip-card");
+    cards.forEach(function(card){
+        card.addEventListener("click", function(){
+            const inner = card.querySelector(".flip-card-inner");
+            inner.classList.toggle("rotate");
+        });
+    });
+});
+
 </script>
 
 </body>

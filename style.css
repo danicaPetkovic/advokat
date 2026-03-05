@@ -320,7 +320,7 @@ img {
     transform-origin: center center;
 }
 
-.flip-card:hover .flip-card-inner {
+.flip-card-inner.rotate{
     transform: rotateY(180deg);
 }
 
@@ -346,8 +346,11 @@ img {
     transform: rotateY(180deg);
 }
 
-.flip-card-inner {
-    will-change: transform;
+/* desktop hover */
+@media (hover:hover){
+    .flip-card:hover .flip-card-inner{
+        transform:rotateY(180deg);
+    }
 }
 
 a.no-underline {
@@ -579,6 +582,10 @@ a.no-underline {
         text-decoration: none;
         letter-spacing: 1px;
         transition: 0.4s;
+    }
+
+    .contact-bg {
+        background-position: left center;
     }
 }
 
