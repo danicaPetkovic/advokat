@@ -8,27 +8,6 @@ window.addEventListener("load", () => {
     });
 });
 
-document.getElementById("emailForm")?.addEventListener("submit", function(e) {
-  e.preventDefault(); // sprečava reload stranice
-
-  // Pokupi podatke iz forme
-  const to = "adv.miodrag_petkovic@outlook.com";
-  const subject = encodeURIComponent(document.getElementById("email-subject").value);
-  const name = encodeURIComponent(document.getElementById("email-name").value);
-  const phone = encodeURIComponent(document.getElementById("email-phone").value);
-  const text = encodeURIComponent(document.getElementById("email-body").value);
-
-  const body = `Ime i prezime: ${name}%0ABroj telefona: ${phone}%0AOpis slucaja: ${text}`
-
-  // Kreira mailto link
-  const mailtoLink = `mailto:${to}?subject=${subject}&body=${body}`;
-
-  // Otvara email klijent
-  window.location.href = mailtoLink;
-
-  document.getElementById('emailForm').reset();
-});
-
 document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll(".card");
 
